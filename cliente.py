@@ -13,6 +13,9 @@ import re
 from datetime import datetime
 from PIL import Image
 
+# --- CONFIGURACIÓN DE IDENTIDAD (PARA QUE NO SE PISEN LAS APPS) ---
+st.set_page_config(page_title="SOL Laprida", page_icon="☀️", layout="wide")
+
 # --- CONFIGURACIÓN DE RUTAS DINÁMICAS (PROTECCIÓN DE DATOS) ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
