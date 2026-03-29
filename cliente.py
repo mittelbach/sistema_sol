@@ -5,10 +5,13 @@
 # DESARROLLADO POR: S&M Labs
 # ==========================================
 
-import streamlit as st
+import streamlit as st  # <--- ESTO ES LO QUE TE FALTABA EN EL ERROR
 import json
 import os
-import streamlit.components.v1 as components
+import requests
+import re
+from datetime import datetime
+from PIL import Image
 
 # --- CONFIGURACIÓN DE RUTAS DINÁMICAS (PROTECCIÓN DE DATOS) ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
