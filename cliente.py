@@ -111,18 +111,20 @@ with st.sidebar:
     st.title("☀️ SOL Laprida")
     st.markdown("---")
     
-    # Widget del Clima
+    # --- EL CLIMA (VERSIÓN IFRAME ROBUSTA) ---
     st.subheader("⛅ El Tiempo")
-    weather_widget = """<a class="weatherwidget-io" href="https://forecast7.com/es/n37d13w60d76/laprida/" data-label_1="LAPRIDA" data-label_2="S&M Labs" data-theme="pure" >LAPRIDA</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>"""
-    components.html(weather_widget, height=150)
     
-    st.markdown("---")
-    st.subheader("📻 Radios Locales")
-    st.markdown("""
-        - [Radio Power 102.1](https://www.radiopowerlaprida.com.ar/)
-        - [Radio Show 101.3](https://radioshowlaprida.com/)
-        - [Laprida 104.5](https://www.radiolaprida.com/)
-    """)
+    # Imagen dinámica de Meteored para Laprida
+    clima_url = "https://www.meteored.com.ar/wimages/foto76f0d368d3744957e8417c870f20966d.png"
+    
+    st.markdown(f"""
+        <div style="background-color: white; padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #eee;">
+            <img src="{clima_url}" style="width: 100%; border-radius: 5px;">
+            <p style="font-size: 12px; color: #666; margin-top: 5px;">Laprida, BA</p>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    st.caption("[Ver pronóstico extendido](https://www.meteored.com.ar/tiempo-en_Laprida-America+Sur-Argentina-Provincia+de+Buenos+Aires-1-16885.html)")
 
 # --- CUERPO PRINCIPAL ---
 st.title("🚀 Ofertas Destacadas en Laprida")
