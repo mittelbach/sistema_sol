@@ -1,0 +1,35 @@
+[
+    {
+        "producto": "Ventana Aluminio Estandard 80x60",
+        "precio": 57250.0,
+        "categoria": "Otros",
+        "frecuencia": "Diario/Masivo",
+        "comercio_nombre": "Alumik",
+        "comercio_responsable": "Oscar y Jorge Baigorria",
+        "comercio_email": "alumik26@gmail.com",
+        "comercio_wa": "De La Canal 1090 | Tel: 2285421397",
+        "fecha_pub": "25/03 08:04"
+    },
+    {
+        "producto": "Puerta Aluminio ",
+        "precio": 97000.0,
+        "categoria": "Otros",
+        "frecuencia": "Diario/Masivo",
+        "comercio_nombre": "Alumik",
+        "comercio_responsable": "Oscar y Jorge Baigorria",
+        "comercio_email": "alumik26@gmail.com",
+        "comercio_wa": "De La Canal 1090 | Tel: 2285421397",
+        "fecha_pub": "25/03 08:38"
+    },
+    {
+        "producto": "Lechuga por kilo",
+        "precio": 3750.0,
+        "categoria": "Alimentos",
+        "frecuencia": "Diario/Masivo",
+        "comercio_nombre": "Supermercado Vergel",
+        "comercio_responsable": "Pedro Vergel",
+        "comercio_email": null,
+        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
+        "fecha_pub": "25/03 10:16"
+    }
+]
