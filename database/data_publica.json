@@ -2,235 +2,197 @@
     {
         "producto": "Yerba Candia x Kg",
         "precio": 2990.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:38"
+        "fecha": "28/03 16:38"
     },
     {
         "producto": "Yerba Andresito x Kg",
         "precio": 3100.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:38"
+        "fecha": "28/03 16:38"
     },
     {
         "producto": "Duraznos Molto, lata x 820 grs",
         "precio": 2290.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:40"
+        "fecha": "28/03 16:40"
     },
     {
         "producto": "Harina Pureza x Kg",
         "precio": 1350.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:41"
+        "fecha": "28/03 16:41"
     },
     {
         "producto": "Azucar Dulcita x Kg",
         "precio": 1250.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:43"
+        "fecha": "28/03 16:43"
     },
     {
         "producto": "Leche Plenty Pack x 1Lt.",
         "precio": 1450.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:43"
+        "fecha": "28/03 16:43"
     },
     {
         "producto": "Fideos Tirabuzon Marolio x 500 grs",
         "precio": 750.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:44"
+        "fecha": "28/03 16:44"
     },
     {
         "producto": "Pure de tomate Arcor x 500",
         "precio": 890.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:45"
-    },
-    {
-        "producto": "Atun Desmenuzado en tala",
-        "precio": 1290.0,
-        "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:46"
+        "fecha": "28/03 16:45"
     },
     {
         "producto": "Vino tinto Don Valentín",
         "precio": 2990.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:47"
+        "fecha": "28/03 16:47"
     },
     {
         "producto": "Cerveza 1890 pack x 6 uds",
         "precio": 7990.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:48"
+        "fecha": "28/03 16:48"
     },
     {
         "producto": "Vino Tinto Viñas de Balbo",
         "precio": 2590.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:48"
+        "fecha": "28/03 16:48"
     },
     {
         "producto": "Vino Tinto los Pasos",
         "precio": 3290.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:49"
+        "fecha": "28/03 16:49"
     },
     {
         "producto": "Vino Colon Tinto",
         "precio": 2490.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:50"
+        "fecha": "28/03 16:50"
     },
     {
         "producto": "Aceite de Girasol Bonoleo",
         "precio": 2890.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:51"
+        "fecha": "28/03 16:51"
     },
     {
         "producto": "Papel Higienico 4x80",
         "precio": 3590.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:51"
+        "fecha": "28/03 16:51"
     },
     {
         "producto": "Papel de cocina Sussex Pack Ahorro x 3",
         "precio": 1850.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:52"
+        "fecha": "28/03 16:52"
     },
     {
         "producto": "Arcor tomate perita Lata",
         "precio": 1190.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:53"
+        "fecha": "28/03 16:53"
     },
     {
         "producto": "Arcor tomate cubeteado Lata",
         "precio": 1490.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:54"
-    },
-    {
-        "producto": "Lomo de Atun La Campagnola x170 gr.",
-        "precio": 4990.0,
-        "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:55"
+        "fecha": "28/03 16:54"
     },
     {
         "producto": "Mermelada Arcor Varios sabores",
         "precio": 2790.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:56"
+        "fecha": "28/03 16:56"
     },
     {
         "producto": "Galletitas Traviata X 3",
         "precio": 1500.0,
+        "comercio": "Supermercado Vergel",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Vergel",
-        "comercio_wa": "Av San MArtin 1301 | WA: 2285420174",
-        "fecha_pub": "28/03 16:56"
+        "fecha": "28/03 16:56"
     },
     {
         "producto": "Harina Blancaflor 0000 x Kg",
         "precio": 1365.0,
+        "comercio": "Supermercado Los Vascos",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Los Vascos",
-        "comercio_wa": "Hipólito Yrigoyen 837 | WA: 2285420589",
-        "fecha_pub": "28/03 17:21"
+        "fecha": "28/03 17:21"
     },
     {
         "producto": "Harina Pureza 000 x 1kg",
         "precio": 1089.0,
+        "comercio": "Supermercado Gonzalez",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Gonzalez",
-        "comercio_wa": "Av San Martin y España",
-        "fecha_pub": "28/03 20:09"
+        "fecha": "28/03 20:09"
     },
     {
         "producto": "Harina 0000 x 1kg",
         "precio": 1249.0,
+        "comercio": "Supermercado Gonzalez",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Gonzalez",
-        "comercio_wa": "Av San Martin y España",
-        "fecha_pub": "28/03 20:10"
+        "fecha": "28/03 20:10"
     },
     {
         "producto": "Harina Cañuelas 000 x 1kg",
         "precio": 955.0,
+        "comercio": "Supermercado Cata II",
         "categoria": "100 - Supermercado / Almacén",
-        "frecuencia": "Diario",
-        "comercio_nombre": "Supermercado Cata II",
-        "comercio_wa": "Santamarina y Juan XXIII",
-        "fecha_pub": "28/03 20:12"
+        "fecha": "28/03 20:12"
+    },
+    {
+        "producto": "Atun en Lata",
+        "precio": 1390.0,
+        "comercio": "Supermercado Gonzalez",
+        "categoria": "100 - Supermercado / Almacén",
+        "fecha": "29/03 19:05"
+    },
+    {
+        "producto": "Atun desmenuzado en lata",
+        "precio": 1390.0,
+        "comercio": "Supermercado Gonzalez",
+        "categoria": "100 - Supermercado / Almacén",
+        "fecha": "29/03 19:30"
+    },
+    {
+        "producto": "Atun desmenuzado en lata ",
+        "precio": 1290.0,
+        "comercio": "Supermercado Vergel",
+        "categoria": "100 - Supermercado / Almacén",
+        "fecha": "29/03 19:31"
+    },
+    {
+        "producto": "Papel de cocina Sussex Pack Ahorro x 3",
+        "precio": 2170.0,
+        "comercio": "Supermercado Gonzalez",
+        "categoria": "Almacen",
+        "fecha": "31/03 10:20"
     }
 ]
