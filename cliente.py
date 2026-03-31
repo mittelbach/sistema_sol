@@ -257,7 +257,7 @@ else:
                         <div class="oferta-card">
                             <h3 style="margin-top:0;">{of.get('producto', 'Producto')}</h3>
                             <p class="precio">$ {of.get('precio', 0):,.2f}</p>
-                            <p>🏢 <b>Comercio:</b> {of.get('comercio_nombre', 'Comercio')}</p>
+                            <p><b>Comercio:</b> {of.get('comercio', 'S/D')}</p>
                             <p>📅 <b>Vence:</b> {of.get('fecha_vencimiento', 'Consultar')}</p>
                         </div>
                     """, unsafe_allow_html=True)
