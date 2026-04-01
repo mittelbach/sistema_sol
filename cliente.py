@@ -251,21 +251,24 @@ else:
         st.markdown('<div class="section-header">🏆 Podio de Competitividad</div>', unsafe_allow_html=True)
         
         sorted_rank = sorted(ranking_data.items(), key=lambda x: x[1], reverse=True)
-        
-        # Dibujamos la lista compacta
+
+        # 1. ABRIMOS LA CAJA BLANCA (NUEVO)
+        st.markdown('<div class="podio-container">', unsafe_allow_html=True)
+
         for i, (comercio, puntos) in enumerate(sorted_rank[:3]):
             medallas = ["🥇", "🥈", "🥉"]
+            # 2. USAMOS LA CLASE CORRECTA 'podio-item'
             st.markdown(f"""
-                <div class="podio-item-premium">
+                <div class="podio-item">
                     <span style="font-size: 1.5rem;">{medallas[i]}</span>
                     <span class="podio-name">{comercio}</span>
-                    <span style="color: #666; font-size: 0.9rem;">{puntos} Victorias</span>
+                    <span style="color: #666; font-size: 0.9rem; font-weight:600;">{puntos} Victorias</span>
                 </div>
             """, unsafe_allow_html=True)
-        
-        st.markdown('<br>', unsafe_allow_html=True) # Espacio neguentrópico
-        # st.markdown("---")
 
+        # 3. CERRAMOS LA CAJA (NUEVO)
+        st.markdown('</div>', unsafe_allow_html=True)
+        
     # 2. VEREDICTOS
     mostrar_veredictos(ofertas_raw)
 
@@ -310,5 +313,5 @@ else:
                 if wa_num:
                     st.link_button(f"📲 Contactar a {of.get('comercio')}", 
                                   f"https://wa.me/{wa_num}?text=Hola!%20Vi%20tu%20oferta%20de%20{of.get('producto')}%20en%20SOL")
-st.markdown("---")
+# st.markdown("---")
 st.caption("© 2026 S&M Labs | Sociología de Alto Impacto")
