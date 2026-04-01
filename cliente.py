@@ -1,6 +1,6 @@
 # ==========================================
 # SOFTWARE: SOL Laprida (Sistema de Ofertas)
-# VERSIÓN: 29.8 (RESTAURACIÓN QUIRÚRGICA)
+# VERSIÓN: 30.0 REBOOT TOTAL
 # MÓDULO: cliente.py
 # DESARROLLADO POR: S&M Labs
 # ==========================================
@@ -268,7 +268,7 @@ else:
 
         # 3. CERRAMOS LA CAJA (NUEVO)
         st.markdown('</div>', unsafe_allow_html=True)
-        
+
     # 2. VEREDICTOS
     mostrar_veredictos(ofertas_raw)
 
