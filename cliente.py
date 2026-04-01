@@ -321,4 +321,4 @@ else:
                     st.link_button(f"📲 Contactar a {of.get('comercio')}", 
                                   f"https://wa.me/{wa_num}?text=Hola!%20Vi%20tu%20oferta%20de%20{of.get('producto')}%20en%20SOL")
 # st.markdown("---")
-st.caption("© 2026 S&M Labs | Sociología de Alto Impacto")
+st.caption("© 2026 S&M Labs | Sociología de Alto Impacto | v30.0-CREMA")
