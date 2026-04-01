@@ -17,9 +17,14 @@ from PIL import Image
 # --- LÍNEA 16: REFUNDACIÓN DE IDENTIDAD VISUAL (CLON MAQUETA) ---
 st.markdown("""
 <style>
-    /* 1. Fondo Crema y Tipografía Premium */
-    [data-testid="stAppViewContainer"] {
+    /* 1. Fondo Crema TOTAL (Forzado para Laptop y Celular) */
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"], .main {
         background-color: #fdfaf5 !important;
+    }
+
+    /* Esto elimina cualquier residuo blanco que Streamlit ponga por defecto */
+    [data-testid="stAppViewContainer"] > section:nth-child(2) {
+        background-color: transparent !important;
     }
     
     /* 2. Títulos y Secciones Estilo S&M */
