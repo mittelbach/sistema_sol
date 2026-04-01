@@ -14,6 +14,72 @@ import statistics
 from datetime import datetime
 from PIL import Image
 
+# --- LÍNEA 16: REFUNDACIÓN DE IDENTIDAD VISUAL (CLON MAQUETA) ---
+st.markdown("""
+<style>
+    /* 1. Fondo Crema y Tipografía Premium */
+    [data-testid="stAppViewContainer"] {
+        background-color: #fdfaf5 !important;
+    }
+    
+    /* 2. Títulos y Secciones Estilo S&M */
+    .main-title { font-size: 2.2rem; font-weight: 900; color: #1a1a1a; text-align: center; margin-bottom: 5px; letter-spacing: -1px; }
+    .subtitle { font-size: 1.1rem; color: #555; text-align: center; margin-bottom: 30px; }
+    .section-header { font-size: 1.6rem; font-weight: 800; color: #333; margin-top: 25px; margin-bottom: 15px; }
+
+    /* 3. El Podio (Lista Blanca de la Maqueta) */
+    .podio-container {
+        background: white;
+        border-radius: 15px;
+        padding: 5px 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin-bottom: 25px;
+        border: 1px solid #eee;
+    }
+    .podio-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .podio-item:last-child { border-bottom: none; }
+    .podio-name { font-weight: 700; font-size: 1.1rem; color: #1a1a1a; margin-left: 10px; flex-grow: 1; }
+
+    /* 4. Tarjetas de Ofertas (Clon Atómico) */
+    .oferta-card-clon {
+        background: white;
+        border-radius: 18px;
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        border: 1px solid #eee;
+        border-left: 8px solid #ffcc00; /* Borde amarillo estándar */
+    }
+    
+    /* Variante Roja para el "Ahorro Crítico" */
+    .critical-card {
+        border-left: 8px solid #d32f2f !important;
+    }
+
+    .prod-name { font-size: 1.3rem; font-weight: 800; color: #1a1a1a; margin: 0; }
+    .prod-price { font-size: 1.7rem; font-weight: 900; color: #d32f2f; margin: 8px 0; }
+    .info-line { font-size: 0.95rem; color: #666; margin: 4px 0; display: flex; align-items: center; gap: 5px; }
+    
+    /* 5. Tags de Ahorro */
+    .tag-premium {
+        display: inline-block;
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 3px 10px;
+        border-radius: 6px;
+        font-weight: 800;
+        font-size: 0.8rem;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
 # --- CONFIGURACIÓN DE RUTAS DE SEGURIDAD (S&M Labs) ---
 BASE_ROOT = os.path.dirname(os.path.abspath(__file__))
 DATABASE_DIR = os.path.join(BASE_ROOT, "database")
@@ -25,48 +91,7 @@ RANKING_JSON_PATH = os.path.join(DATABASE_DIR, "ranking_sio.json")
 # Configuración de interfaz
 st.set_page_config(page_title="SOL Laprida - Ofertas", page_icon="☀️", layout="wide")
 
-# --- ESTILOS CSS PERSONALIZADOS (IDENTIDAD VISUAL S&M) ---
-st.markdown("""
-    <style>
-    .oferta-card {
-        background-color: #ffffff;
-        border-radius: 12px;
-        padding: 20px;
-        border-left: 6px solid #ffcc00;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .precio {
-        color: #d32f2f;
-        font-size: 26px;
-        font-weight: bold;
-    }
-    .veredicto-container {
-        background-color: #f0f7ff;
-        border-radius: 10px;
-        padding: 18px;
-        border: 1px solid #007bff;
-        margin-bottom: 25px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .ranking-card {
-        background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
-        color: white;
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-        font-weight: bold;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    .highlight-win {
-        color: #2e7d32;
-        font-weight: bold;
-        background-color: #e8f5e9;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
 
 # --- NÚCLEO DE FUNCIONES ---
 def cargar_datos(ruta):
@@ -222,49 +247,68 @@ else:
     # 1. PODIO
     ranking_data = obtener_ranking()
     if ranking_data:
-        st.subheader("🏆 Podio de Competitividad")
+        # --- NUEVO PODIO ESTILO PREMIUM ---
+        st.markdown('<div class="section-header">🏆 Podio de Competitividad</div>', unsafe_allow_html=True)
+        
         sorted_rank = sorted(ranking_data.items(), key=lambda x: x[1], reverse=True)
-        cols_ranking = st.columns(min(len(sorted_rank), 3))
+        
+        # Dibujamos la lista compacta
         for i, (comercio, puntos) in enumerate(sorted_rank[:3]):
-            with cols_ranking[i]:
-                medalla = "🥇" if i == 0 else "🥈" if i == 1 else "🥉"
-                st.markdown(f"""
-                    <div class="ranking-card">
-                        <div style="font-size: 35px;">{medalla}</div>
-                        <div style="font-size: 18px; margin: 5px 0;">{comercio}</div>
-                        <div style="font-size: 22px;">{puntos} Victorias</div>
-                    </div>
-                """, unsafe_allow_html=True)
-        st.markdown("---")
+            medallas = ["🥇", "🥈", "🥉"]
+            st.markdown(f"""
+                <div class="podio-item-premium">
+                    <span style="font-size: 1.5rem;">{medallas[i]}</span>
+                    <span class="podio-name">{comercio}</span>
+                    <span style="color: #666; font-size: 0.9rem;">{puntos} Victorias</span>
+                </div>
+            """, unsafe_allow_html=True)
+        
+        st.markdown('<br>', unsafe_allow_html=True) # Espacio neguentrópico
+        # st.markdown("---")
 
     # 2. VEREDICTOS
     mostrar_veredictos(ofertas_raw)
 
     # 3. BUSCADOR
-    st.subheader("🔍 Buscador de Ofertas")
-    busqueda = st.text_input("¿Qué necesitás comprar?", placeholder="Ej: Aceite, Harina...")
+    # # 3. BUSCADOR (Estilo Neguentrópico)
+    st.markdown('<div class="section-header">🔍 Buscar producto o comercio...</div>', unsafe_allow_html=True)
     
-    filtro = [o for o in ofertas_raw if busqueda.lower() in o.get('producto', '').lower() or busqueda.lower() in o.get('comercio_nombre', '').lower()]
+    # Input sin etiqueta (label_visibility="collapsed") para que no robe espacio
+    busqueda = st.text_input("", placeholder="Ej: Aceite, Harina, Coca Cola...", label_visibility="collapsed")
+
+    filtro = [o for o in ofertas_raw if busqueda.lower() in o.get('producto', '').lower() or busqueda.lower() in o.get('comercio', '').lower()]
+
+    st.markdown('<div class="section-header">🚨 Ofertas Detectadas</div>', unsafe_allow_html=True)
     
     if not filtro:
         st.error(f"No se encontraron ofertas para '{busqueda}'.")
     else:
-        grid = st.columns(2)
+        # En el móvil, Streamlit apila estas dos columnas automáticamente
+        col1, col2 = st.columns(2)
         for idx, of in enumerate(filtro):
-            with grid[idx % 2]:
-                with st.container():
-                    st.markdown(f"""
-                        <div class="oferta-card">
-                            <h3 style="margin-top:0;">{of.get('producto', 'Producto')}</h3>
-                            <p class="precio">$ {of.get('precio', 0):,.2f}</p>
-                            <p><b>Comercio:</b> {of.get('comercio', 'S/D')}</p>
-                            <p>📅 <b>Vence:</b> {of.get('fecha_vencimiento', 'Consultar')}</p>
-                        </div>
-                    """, unsafe_allow_html=True)
-                    
-                    wa_num = "".join(filter(str.isdigit, str(of.get('comercio_wa', ''))))
-                    if wa_num:
-                        st.link_button(f"📲 Contactar", f"https://wa.me/{wa_num}?text=Hola!%20Vi%20tu%20oferta%20en%20SOL")
+            with col1 if idx % 2 == 0 else col2:
+                
+                # Usamos la clase 'oferta-card' que ya tenés en tu CSS
 
+                # Este es el nuevo dibujo premium
+                ahorro = of.get('ahorro_pct', 0)
+                clase_alerta = "critical-card" if ahorro > 15 else ""
+                
+                st.markdown(f"""
+                    <div class="oferta-card-clon {clase_alerta}">
+                        <h3 class="prod-name">{of.get('producto', 'Producto')}</h3>
+                        <div class="prod-price">$ {of.get('precio', 0):,.2f}</div>
+                        <div class="info-line">🏪 <b>{of.get('comercio', 'S/D')}</b></div>
+                        <div class="info-line">
+                            <span class="tag-premium">🔥 AHORRO: {ahorro:.1f}%</span>
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
+                
+                # Botón de WhatsApp funcional debajo de la tarjeta
+                wa_num = "".join(filter(str.isdigit, str(of.get('comercio_wa', ''))))
+                if wa_num:
+                    st.link_button(f"📲 Contactar a {of.get('comercio')}", 
+                                  f"https://wa.me/{wa_num}?text=Hola!%20Vi%20tu%20oferta%20de%20{of.get('producto')}%20en%20SOL")
 st.markdown("---")
 st.caption("© 2026 S&M Labs | Sociología de Alto Impacto")
