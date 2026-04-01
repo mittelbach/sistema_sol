@@ -13,6 +13,8 @@ import re
 import statistics
 from datetime import datetime
 from PIL import Image
+# ---linea que esta comentada el la linea 98---
+st.set_page_config(page_title="SOL Laprida - Ofertas", page_icon="☀️", layout="wide")
 
 # --- LÍNEA 16: REFUNDACIÓN DE IDENTIDAD VISUAL (CLON MAQUETA) ---
 st.markdown("""
@@ -94,7 +96,7 @@ DB_JSON_PATH = os.path.join(DATABASE_DIR, "data_publica.json")
 RANKING_JSON_PATH = os.path.join(DATABASE_DIR, "ranking_sio.json")
 
 # Configuración de interfaz
-st.set_page_config(page_title="SOL Laprida - Ofertas", page_icon="☀️", layout="wide")
+# st.set_page_config(page_title="SOL Laprida - Ofertas", page_icon="☀️", layout="wide")
 
 
 
@@ -205,7 +207,7 @@ with st.sidebar:
         st.image(logo_path, width=200)
     
     st.title("☀️ SOL Laprida")
-    st.caption("Infraestructura S&M Labs | v29.8")
+    st.caption("Infraestructura S&M Labs | v30.0-CREMA")
     st.markdown("---")
     
     st.subheader("⛅ El Tiempo")
