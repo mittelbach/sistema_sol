@@ -5,7 +5,7 @@
 # DESARROLLADO POR: S&M Labs
 # ==========================================
 
-import streamlit as st  
+import streamlit as st
 import json
 import os
 import requests
@@ -13,10 +13,11 @@ import re
 import statistics
 from datetime import datetime
 from PIL import Image
-# ---linea que esta comentada el la linea 98---
+
+# --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(page_title="SOL Laprida - Ofertas", page_icon="☀️", layout="wide")
 
-# --- LÍNEA 16: REFUNDACIÓN DE IDENTIDAD VISUAL (CLON MAQUETA) ---
+# --- REFUNDACIÓN DE IDENTIDAD VISUAL (CLON MAQUETA) ---
 st.markdown("""
 <style>
     /* 1. Fondo Crema TOTAL (Forzado para Laptop y Celular) */
@@ -24,34 +25,51 @@ st.markdown("""
         background-color: #fdfaf5 !important;
     }
 
-    /* Esto elimina cualquier residuo blanco que Streamlit ponga por defecto */
+    /* Elimina residuo blanco de Streamlit */
     [data-testid="stAppViewContainer"] > section:nth-child(2) {
         background-color: transparent !important;
     }
-    
+
     /* 2. Títulos y Secciones Estilo S&M */
     .main-title { font-size: 2.2rem; font-weight: 900; color: #1a1a1a; text-align: center; margin-bottom: 5px; letter-spacing: -1px; }
     .subtitle { font-size: 1.1rem; color: #555; text-align: center; margin-bottom: 30px; }
     .section-header { font-size: 1.6rem; font-weight: 800; color: #333; margin-top: 25px; margin-bottom: 15px; }
 
-    /* 3. El Podio (Lista Blanca de la Maqueta) */
-    .podio-container {
-        background: white;
-        border-radius: 15px;
-        padding: 5px 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        margin-bottom: 25px;
-        border: 1px solid #eee;
-    }
+    /* 3. El Podio (Estilo Tarjetas con Sombra Reforzada) */
     .podio-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 0;
-        border-bottom: 1px solid #f0f0f0;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 15px 20px !important;
+        margin-bottom: 12px !important;
+        background-color: white !important;
+        border-radius: 12px !important;
+        border: 1px solid #d1d1d1 !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important; /* Sombra más profunda */
+        transition: all 0.3s ease;
     }
-    .podio-item:last-child { border-bottom: none; }
-    .podio-name { font-weight: 700; font-size: 1.1rem; color: #1a1a1a; margin-left: 10px; flex-grow: 1; }
+
+    .podio-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.35) !important; /* Sombra extrema en hover */
+    }
+
+    .podio-name {
+        font-weight: 800 !important;
+        font-size: 1.2rem !important;
+        color: #1a1a1a !important;
+        margin-left: 15px !important;
+        flex-grow: 1 !important;
+    }
+
+    .podio-victorias {
+        color: #666 !important;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        background: #f0f2f6 !important;
+        padding: 4px 12px !important;
+        border-radius: 20px !important;
+    }
 
     /* 4. Tarjetas de Ofertas (Clon Atómico) */
     .oferta-card-clon {
@@ -63,7 +81,7 @@ st.markdown("""
         border: 1px solid #eee;
         border-left: 8px solid #ffcc00; /* Borde amarillo estándar */
     }
-    
+
     /* Variante Roja para el "Ahorro Crítico" */
     .critical-card {
         border-left: 8px solid #d32f2f !important;
@@ -72,7 +90,7 @@ st.markdown("""
     .prod-name { font-size: 1.3rem; font-weight: 800; color: #1a1a1a; margin: 0; }
     .prod-price { font-size: 1.7rem; font-weight: 900; color: #d32f2f; margin: 8px 0; }
     .info-line { font-size: 0.95rem; color: #666; margin: 4px 0; display: flex; align-items: center; gap: 5px; }
-    
+
     /* 5. Tags de Ahorro */
     .tag-premium {
         display: inline-block;
@@ -82,6 +100,44 @@ st.markdown("""
         border-radius: 6px;
         font-weight: 800;
         font-size: 0.8rem;
+    }
+
+    /* 6. Veredictos de Ahorro (Expander) */
+    div[data-testid="stExpander"] {
+        background-color: white !important;
+        border-radius: 12px !important;
+        border: 1px solid #d1d1d1 !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+        margin-bottom: 20px !important;
+        overflow: hidden !important;
+    }
+
+    div[data-testid="stExpander"] > details {
+        border: none !important;
+    }
+
+    div[data-testid="stExpander"] summary {
+        font-weight: 800 !important;
+        color: #1a1a1a !important;
+        padding: 10px !important;
+    }
+
+    /* 7. REFORZADO: Tarjeta con Borde Verde Grueso y Sombra */
+    .oferta-card-verde {
+        background: white !important;
+        border-radius: 12px !important;
+        padding: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        border: 4.5px solid #008000 !important; /* Tu verde exacto */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    }
+
+    .contenedor-grilla-sio {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Fuerza las 2 columnas */
+        gap: 10px !important;
+        width: 100% !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -94,9 +150,6 @@ ASSETS_DIR = os.path.join(BASE_ROOT, "assets")
 
 DB_JSON_PATH = os.path.join(DATABASE_DIR, "data_publica.json")
 RANKING_JSON_PATH = os.path.join(DATABASE_DIR, "ranking_sio.json")
-
-# Configuración de interfaz
-# st.set_page_config(page_title="SOL Laprida - Ofertas", page_icon="☀️", layout="wide")
 
 
 
@@ -116,7 +169,7 @@ def obtener_ranking():
                 data = json.load(f)
                 return data if isinstance(data, dict) else {}
         except: return {}
-    return {}
+    return []
 
 def sumar_punto_ranking(comercio):
     ranking = obtener_ranking()
@@ -140,7 +193,7 @@ def mostrar_veredictos(todas_las_ofertas):
     for p in palabras_clave:
         p_norm = p.lower().replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").strip()
         
-        # 1. Agrupamos productos por su "Nombre Completo" para separar tipos (ej: Papel Cocina vs Papel Higiénico)
+        # 1. Agrupamos productos por su "Nombre Completo" para separar tipos
         grupos_especificos = {}
         
         for i, o in enumerate(todas_las_ofertas):
@@ -150,9 +203,9 @@ def mostrar_veredictos(todas_las_ofertas):
             prod_norm = prod_nom.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").strip()
             
             if p_norm in prod_norm:
-                # Usamos las primeras 2 o 3 palabras como 'llave' del grupo para que no mezcle
+                # Usamos las primeras 2 o 3 palabras como 'llave' del grupo
                 palabras = prod_norm.split()
-                llave_grupo = " ".join(palabras[:2]) # Ej: "papel cocina" o "papel higienico"
+                llave_grupo = " ".join(palabras[:2]) 
                 
                 if llave_grupo not in grupos_especificos:
                     grupos_especificos[llave_grupo] = []
@@ -160,7 +213,7 @@ def mostrar_veredictos(todas_las_ofertas):
 
         # 2. Procesamos cada grupo específico por separado
         for nombre_grupo, items in grupos_especificos.items():
-            # Verificamos si hay competencia de comercios en este grupo específico
+            # Verificamos si hay competencia de comercios
             comercios = set(it["data"].get('comercio_nombre', it["data"].get('comercio', 'Local')) for it in items)
             
             if len(comercios) >= 2:
@@ -214,12 +267,14 @@ with st.sidebar:
     @st.cache_data(ttl=600)
     def obtener_clima_laprida():
         try:
-            url = "https://wttr.in/Laprida,BuenosAires?format=%t|%C|%w|%p"
+            # ---Programacion de grados farenheit a celsius ----
+            url = "https://wttr.in/Laprida,BuenosAires?format=%t|%C|%w|%p&m"
             res = requests.get(url, timeout=10)
             if res.status_code == 200:
                 texto = res.text.encode('utf-8').decode('utf-8')
-                return texto.replace("Â", "").replace("°C", "°")
-        except: return None
+                return texto.replace("Â", "")
+        except:
+            return None
     
     datos_clima = obtener_clima_laprida()
     if datos_clima:
@@ -242,6 +297,7 @@ with st.sidebar:
         </div>
     """, unsafe_allow_html=True)
 
+
 # --- CUERPO PRINCIPAL ---
 st.title("🚀 SOL: Sistema de Ofertas Laprida")
 st.markdown("#### Inteligencia Neguentrópica aplicada al consumo local.")
@@ -254,17 +310,14 @@ else:
     # 1. PODIO
     ranking_data = obtener_ranking()
     if ranking_data:
-        # --- NUEVO PODIO ESTILO PREMIUM ---
         st.markdown('<div class="section-header">🏆 Podio de Competitividad</div>', unsafe_allow_html=True)
         
         sorted_rank = sorted(ranking_data.items(), key=lambda x: x[1], reverse=True)
 
-        # 1. ABRIMOS LA CAJA BLANCA (NUEVO)
         st.markdown('<div class="podio-container">', unsafe_allow_html=True)
 
         for i, (comercio, puntos) in enumerate(sorted_rank[:3]):
             medallas = ["🥇", "🥈", "🥉"]
-            # 2. USAMOS LA CLASE CORRECTA 'podio-item'
             st.markdown(f"""
                 <div class="podio-item">
                     <span style="font-size: 1.5rem;">{medallas[i]}</span>
@@ -273,52 +326,53 @@ else:
                 </div>
             """, unsafe_allow_html=True)
 
-        # 3. CERRAMOS LA CAJA (NUEVO)
         st.markdown('</div>', unsafe_allow_html=True)
+
 
     # 2. VEREDICTOS
     mostrar_veredictos(ofertas_raw)
 
-    # 3. BUSCADOR
-    # # 3. BUSCADOR (Estilo Neguentrópico)
+
+   # 3. BUSCADOR
     st.markdown('<div class="section-header">🔍 Buscar producto o comercio...</div>', unsafe_allow_html=True)
     
-    # Input sin etiqueta (label_visibility="collapsed") para que no robe espacio
-    busqueda = st.text_input("", placeholder="Ej: Aceite, Harina, Coca Cola...", label_visibility="collapsed")
+    busqueda = st.text_input("Buscar producto o comercio", placeholder="Ej: Aceite, Harina, Coca Cola...", label_visibility="collapsed")
 
-    filtro = [o for o in ofertas_raw if busqueda.lower() in o.get('producto', '').lower() or busqueda.lower() in o.get('comercio', '').lower()]
+    if busqueda:
+        filtro = [o for o in ofertas_raw if busqueda.lower() in o.get('producto', '').lower() or busqueda.lower() in o.get('comercio', '').lower()]
+    else:
+        filtro = ofertas_raw
 
     st.markdown('<div class="section-header">🚨 Ofertas Detectadas</div>', unsafe_allow_html=True)
     
     if not filtro:
         st.error(f"No se encontraron ofertas para '{busqueda}'.")
     else:
-        # En el móvil, Streamlit apila estas dos columnas automáticamente
-        col1, col2 = st.columns(2)
-        for idx, of in enumerate(filtro):
-            with col1 if idx % 2 == 0 else col2:
-                
-                # Usamos la clase 'oferta-card' que ya tenés en tu CSS
+        # Iniciamos la grilla
+        html_final = '<div class="contenedor-grilla-sio">'
 
-                # Este es el nuevo dibujo premium
-                ahorro = of.get('ahorro_pct', 0)
-                clase_alerta = "critical-card" if ahorro > 15 else ""
-                
-                st.markdown(f"""
-                    <div class="oferta-card-clon {clase_alerta}">
-                        <h3 class="prod-name">{of.get('producto', 'Producto')}</h3>
-                        <div class="prod-price">$ {of.get('precio', 0):,.2f}</div>
-                        <div class="info-line">🏪 <b>{of.get('comercio', 'S/D')}</b></div>
-                        <div class="info-line">
-                            <span class="tag-premium">🔥 AHORRO: {ahorro:.1f}%</span>
-                        </div>
-                    </div>
-                """, unsafe_allow_html=True)
-                
-                # Botón de WhatsApp funcional debajo de la tarjeta
-                wa_num = "".join(filter(str.isdigit, str(of.get('comercio_wa', ''))))
-                if wa_num:
-                    st.link_button(f"📲 Contactar a {of.get('comercio')}", 
-                                  f"https://wa.me/{wa_num}?text=Hola!%20Vi%20tu%20oferta%20de%20{of.get('producto')}%20en%20SOL")
-# st.markdown("---")
+        for o in filtro:
+            nom = str(o.get('producto', 'Producto'))
+            pre = o.get('precio', 0)
+            com = str(o.get('comercio', 'S/D'))
+            ahr = o.get('ahorro_pct', 0.0)
+
+            # Construimos la tarjeta SIN usar f-strings complejas para evitar errores de renderizado
+            tarjeta = '<div class="oferta-card-verde">'
+            tarjeta += '<div style="font-weight:800; color:#1a1a1a; font-size:1.1rem;">' + nom + '</div>'
+            tarjeta += '<div style="color:#d32f2f; font-weight:900; font-size:1.4rem; margin:5px 0;">$ ' + f"{pre:,.2f}" + '</div>'
+            tarjeta += '<div style="font-size:0.9rem; color:#444;">🏪 <b>' + com + '</b></div>'
+            tarjeta += '<div style="background:#e8f5e9; color:#2e7d32; display:inline-block; padding:2px 8px; border-radius:4px; font-size:0.8rem; margin-top:5px; font-weight:bold;">✅ ' + f"{ahr:.1f}" + '% Ahorro</div>'
+            tarjeta += '</div>'
+            
+            html_final += tarjeta
+
+        html_final += '</div>' # Cerramos la grilla
+        
+        # MANDAMOS TODO AL RENDERIZADOR
+        st.markdown(html_final, unsafe_allow_html=True)
+
+
+# --- PIE DE PÁGINA (ESTO VA PEGADO AL BORDE IZQUIERDO, SIN ESPACIOS) ---
+st.markdown("---")
 st.caption("© 2026 S&M Labs | Sociología de Alto Impacto | v30.0-CREMA")
