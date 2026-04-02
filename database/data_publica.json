@@ -3,196 +3,203 @@
         "producto": "Yerba Candia x Kg",
         "precio": 2990.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:38"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Yerba Andresito x Kg",
         "precio": 3100.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:38"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Duraznos Molto, lata x 820 grs",
         "precio": 2290.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:40"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Harina Pureza x Kg",
         "precio": 1350.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:41"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Azucar Dulcita x Kg",
         "precio": 1250.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:43"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Leche Plenty Pack x 1Lt.",
         "precio": 1450.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:43"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Fideos Tirabuzon Marolio x 500 grs",
         "precio": 750.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:44"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Pure de tomate Arcor x 500",
         "precio": 890.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:45"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Vino tinto Don Valentín",
         "precio": 2990.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:47"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Cerveza 1890 pack x 6 uds",
         "precio": 7990.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:48"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Vino Tinto Viñas de Balbo",
         "precio": 2590.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:48"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Vino Tinto los Pasos",
         "precio": 3290.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:49"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Vino Colon Tinto",
         "precio": 2490.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:50"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Aceite de Girasol Bonoleo",
         "precio": 2890.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:51"
+        "clasificacion": "Almacen",
+        "descuento": 15.0
     },
     {
         "producto": "Papel Higienico 4x80",
         "precio": 3590.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:51"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Papel de cocina Sussex Pack Ahorro x 3",
         "precio": 1850.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:52"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Arcor tomate perita Lata",
         "precio": 1190.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:53"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Arcor tomate cubeteado Lata",
         "precio": 1490.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:54"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Mermelada Arcor Varios sabores",
         "precio": 2790.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:56"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Galletitas Traviata X 3",
         "precio": 1500.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 16:56"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
     },
     {
         "producto": "Harina Blancaflor 0000 x Kg",
         "precio": 1365.0,
         "comercio": "Supermercado Los Vascos",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 17:21"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Harina Pureza 000 x 1kg",
         "precio": 1089.0,
         "comercio": "Supermercado Gonzalez",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 20:09"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Harina 0000 x 1kg",
         "precio": 1249.0,
         "comercio": "Supermercado Gonzalez",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 20:10"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Harina Cañuelas 000 x 1kg",
         "precio": 955.0,
         "comercio": "Supermercado Cata II",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "28/03 20:12"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Atun en Lata",
         "precio": 1390.0,
         "comercio": "Supermercado Gonzalez",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "29/03 19:05"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Atun desmenuzado en lata",
         "precio": 1390.0,
         "comercio": "Supermercado Gonzalez",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "29/03 19:30"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Atun desmenuzado en lata ",
         "precio": 1290.0,
         "comercio": "Supermercado Vergel",
-        "categoria": "100 - Supermercado / Almacén",
-        "fecha": "29/03 19:31"
+        "clasificacion": "100 - Supermercado / Almacén",
+        "descuento": 0.0
     },
     {
         "producto": "Papel de cocina Sussex Pack Ahorro x 3",
         "precio": 2170.0,
         "comercio": "Supermercado Gonzalez",
-        "categoria": "Almacen",
-        "fecha": "31/03 10:20"
+        "clasificacion": "Almacen",
+        "descuento": 0.0
+    },
+    {
+        "producto": "Aceite de Girasol Bonoleo",
+        "precio": 2799.0,
+        "comercio": "Supermercado Cata II",
+        "clasificacion": "Almacen",
+        "descuento": 15.0
     }
 ]
