@@ -243,10 +243,22 @@ def mostrar_veredictos(todas_las_ofertas):
                                 🚀 <b>DIAGNÓSTICO SIO:</b> En <b>{nom_g}</b> ahorrás <b>${brecha:,.2f}</b> (<span class="highlight-win">{porc:.1f}% menos</span>).
                             </div>
                         """, unsafe_allow_html=True)
+                        # --- Bloque de Validación con STOP ---
+                        if 'votos_duelos' not in st.session_state:
+                            st.session_state.votos_duelos = set()
+
+                        id_duelo = f"voto_{nombre_grupo.replace(' ','_')}"
+
+                        if id_duelo not in st.session_state.votos_duelos:
+                            if st.button(f"Validar Victoria: {nom_g}", key=id_duelo):
+                               # 1. BLOQUEO PRIMERO (Cerrar la puerta)
+                                st.session_state.votos_duelos.add(id_duelo)
+                                # 2. SUMAR DESPUÉS (Contar la victoria)
+                                sumar_punto_ranking(nom_g)
+                                st.rerun()
+                        else:
+                            st.markdown(f"⭐ **Victoria de {nom_g} convalidada**")
                         
-                        if st.button(f"Validar Victoria: {nom_g}", key=f"btn_{nombre_grupo.replace(' ','_')}"):
-                            sumar_punto_ranking(nom_g)
-                            st.rerun()
 
     if not hay_duelos:
         st.info("Homeostasis estable: No hay disparidades en productos idénticos.")
@@ -362,7 +374,7 @@ else:
             tarjeta += '<div style="font-weight:800; color:#1a1a1a; font-size:1.1rem;">' + nom + '</div>'
             tarjeta += '<div style="color:#d32f2f; font-weight:900; font-size:1.4rem; margin:5px 0;">$ ' + f"{pre:,.2f}" + '</div>'
             tarjeta += '<div style="font-size:0.9rem; color:#444;">🏪 <b>' + com + '</b></div>'
-            tarjeta += '<div style="background:#e8f5e9; color:#2e7d32; display:inline-block; padding:2px 8px; border-radius:4px; font-size:0.8rem; margin-top:5px; font-weight:bold;">✅ ' + f"{ahr:.1f}" + '% Ahorro</div>'
+            tarjeta += '<div style="background:#e8f5e9; color:#1b5e20; display:inline-block; padding:2px 8px; border-radius:4px; font-size:0.8rem; margin-top:5px; font-weight:bold;">🔥 ¡Oportunidad SOL!</div>'
             tarjeta += '</div>'
             
             html_final += tarjeta
